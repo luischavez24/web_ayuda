@@ -130,15 +130,15 @@
           // Iteracion del arreglo de tutoriales
           tutoriales.forEach(function (tutorial) {
           	dom +=
-            "<div class='post-preview box-separate'>" +
-              "<a>" +
-                "<h2 class='post-title'>" +  tutorial.label + "</h2>" +
-              "</a>" +
-              "<div class='embed-responsive embed-responsive-16by9'>" +
-                "<video class='embed-responsive-item' controls><source src='" + tutorial.ruta + "' type='" + tutorial.type+"'></source></video>" +
-              "</div>"
-            "</div>" +
-            "<hr>";
+            `<div class='post-preview box-separate'>
+              <a>
+                <h2 class='post-title'>${tutorial.label}</h2>
+              </a>
+              <div class='embed-responsive embed-responsive-16by9'>
+                <video class='embed-responsive-item' controls><source src='"${tutorial.ruta}' type='${tutorial.type}'></source></video>
+              </div>
+            </div>
+            <hr>`;
           });
           // Se coloca en el DOM
           //

@@ -130,19 +130,18 @@
           // Iteracion del arreglo de manuales
           manuales.forEach(function (manual) {
           	dom +=
-            "<div class='post-preview box-separate'>" +
-              "<a>" +
-                "<h2 class='post-title'>" +  manual.label + "</h2>" +
-                "<h4 class='post-subtitle'>" + manual.desc + "</h4>" +
-              "</a>" +
-              "<a class='btn btn-primary btn-fix float-right' href='" + manual.ruta + "' download='" + manual.download+ "'>" +
-                "<i class='fa fa-save' aria-hidden='true'></i> Descargar" +
-              "</a>" +
-              "<a class='btn btn-warning float-right' href='" + manual.ruta + "' target='_blank'>" +
-                "<i class='fa fa-search-plus' aria-hidden='true'></i> Ver manual" +
-              "</a>" +
-            "</div>" +
-            "<hr>";
+            `<div class='post-preview box-separate'>
+              <a>
+                <h2 class='post-title'> ${manual.label} </h2>
+                <h4 class='post-subtitle'> ${manual.desc}</h4>
+              </a>
+              <a class='btn btn-primary btn-fix float-right' href='${manual.ruta}' download='${manual.download}'>
+                <i class='fa fa-save' aria-hidden='true'></i> Descargar
+              </a>
+              <a class='btn btn-warning float-right' href='${manual.ruta}' target='_blank'>
+                <i class='fa fa-search-plus' aria-hidden='true'></i> Ver manual
+              </a>
+            </div><hr>`;
           });
           // Se coloca en el DOM
           //
