@@ -321,3 +321,11 @@ footer {
 .btn-lg {
   font-size: 16px;
   padding: 25px 35px; }
+
+.btn-fix {
+  margin-left: 10px;
+}
+
+.box-separate {
+  margin-bottom: 80px;
+}

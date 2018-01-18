@@ -38,10 +38,10 @@
             <li class="nav-item">
               <a class="nav-link" href="../">Inicio</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="manuales.html">Manuales</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="tutoriales.html">Tutoriales</a>
             </li>
             <li class="nav-item">
@@ -59,8 +59,8 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
-              <h1>Manuales</h1>
-              <span class="subheading">Aquí podrás encontrar toda la información necesaria para poder usar el Sistema de Gestión Documental</span>
+              <h1>Tutoriales</h1>
+              <span class="subheading">Aquí podrás encontrar todos los tutoriales para ayudarle en el uso del Sistema de Gestión Documental</span>
             </div>
           </div>
         </div>
@@ -114,32 +114,29 @@
     <script src="../js/clean-blog.min.js"></script>
     <script type="text/javascript">
       $(function () {
-        // Recupera el JSON con los datos de los manuales
+        // Recupera el JSON con los datos de los tutoriales
         $.getJSON("data/layout.json", function (data) {
-          // Variable que almacenara los manuales
-          var manuales = []
-          // Buscando los manuales en el JSON
+          // Variable que almacenara los tutoriales
+          var tutoriales = []
+          // Buscando los tutoriales en el JSON
           $.each(data, function (key, val) {
-            console.log(key == "manuales");
-            if(key == "manuales") {
-              manuales = val;
+            console.log(key =="tutoriales");
+            if(key =="tutoriales") {
+              tutoriales = val;
             }
           });
           // Se copiara al DOM
           var dom = ""
-          // Iteracion del arreglo de manuales
-          manuales.forEach(function (manual) {
+          // Iteracion del arreglo de tutoriales
+          tutoriales.forEach(function (tutorial) {
           	dom += 
             "<div class='post-preview box-separate'>" + 
               "<a>" + 
-                "<h2 class='post-title'>" +  manual.label + "</h2>" + 
+                "<h2 class='post-title'>" +  tutorial.label + "</h2>" + 
               "</a>" +
-              "<a class='btn btn-primary btn-fix float-right' href='" + manual.ruta + "' download='" + manual.download+ "'>" + 
-                "<i class='fa fa-save' aria-hidden='true'></i> Descargar" +
-              "</a>" +
-              "<a class='btn btn-warning float-right' href='" + manual.ruta + "' target='_blank'>" +
-                "<i class='fa fa-search-plus' aria-hidden='true'></i> Ver manual" + 
-              "</a>" +
+              "<div class='embed-responsive embed-responsive-16by9'>" +
+                "<iframe class='embed-responsive-item' src='" + tutorial.ruta + "' allowfullscreen></iframe>" +
+              "</div>"
             "</div>" +
             "<hr>";
           });
