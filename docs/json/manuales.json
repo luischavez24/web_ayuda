@@ -1,0 +1,7 @@
+{
+	"manuales" : [
+		{"ruta" : "../files/1.-Modulo-General.pdf", "download" : "Modulo-General.pdf", "label": "Modulo General"},
+		{"ruta" : "../files/2_Modulo Emisión de Documentos.pdf", "download" : "Modulo-Emision-de-Documentos.pdf", "label": "Modulo Emision de Documentos"},
+		{"ruta" : "../files/8.-Modulo-Mesa-de-Partes.pdf", "download" : "Modulo-Mesa-de-Partes.pdf", "label": "Modulo de Mesa de Partes"}	
+	]
+}
