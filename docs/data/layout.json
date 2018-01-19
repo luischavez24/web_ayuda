@@ -1,26 +1,26 @@
 {
 	"manuales" : [
 		{
-			"ruta" : "data/files/1.-Modulo-General.pdf",
+			"ruta" : "/ayuda/docs/data/files/1.-Modulo-General.pdf",
 			"download" : "Modulo-General.pdf",
 			"label": "Modulo General",
 			"desc": "Información de como ingresar al sistema y sus módulos"
 		},
 		{
-			"ruta" : "data/files/2_Modulo Emisión de Documentos.pdf",
+			"ruta" : "/ayuda/docs/data/files/2_Modulo Emisión de Documentos.pdf",
 			"download" : "Modulo-Emision-de-Documentos.pdf",
 			"label": "Modulo Emision de Documentos",
 			"desc": "Información acerca de como emitir un documento con el sistema"
 		},
 		{
-			"ruta" : "data/files/8.-Modulo-Mesa-de-Partes.pdf",
+			"ruta" : "/ayuda/docs/data/files/8.-Modulo-Mesa-de-Partes.pdf",
 			"download" : "Modulo-Mesa-de-Partes.pdf",
 			"label": "Modulo de Mesa de Partes",
 			"desc": "Información del uso por parte de Mesa de Partes del sistema"
 		}
 	],
 	"tutoriales" : [
-		
+
 		{
 			"ruta": "http://sgd.unmsm.edu.pe/software/Tramite_de_bachiller_parte1.mp4",
 			"label": "Tramite de Bachiller - Parte 1",
