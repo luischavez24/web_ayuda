@@ -20,20 +20,21 @@
 		}
 	],
 	"tutoriales" : [
+		
 		{
-			"ruta": "http://sgd.unmsm.edu.pe/software/MESA%20DE%20PARTES.avi",
-			"label": "Tutorial de Mesa de Partes",
-			"type":"video/avi"
-		},
-		{
-			"ruta": "http://sgd.unmsm.edu.pe/software/TRAMITE%20DE%20BACHILLER%20PARTE%201.avi",
+			"ruta": "http://sgd.unmsm.edu.pe/software/Tramite_de_bachiller_parte1.mp4",
 			"label": "Tramite de Bachiller - Parte 1",
-			"type":"video/avi"
+			"type":"video/mp4"
 		},
 		{
-			"ruta": "http://sgd.unmsm.edu.pe/software/TRAMITE%20DE%20BACHILLER%20PARTE%202.avi",
+			"ruta": "http://sgd.unmsm.edu.pe/software/TRAMITE%20DE%20BACHILLER%20PARTE%202.mp4",
 			"label": "Tramite de Bachiller - Parte 2",
-			"type":"video/avi"
+			"type":"video/mp4"
+		},
+		{
+			"ruta": "http://sgd.unmsm.edu.pe/software/MESA%20DE%20PARTES.mp4",
+			"label": "Tutorial de Mesa de Partes",
+			"type":"video/mp4"
 		}
 	]
 }
