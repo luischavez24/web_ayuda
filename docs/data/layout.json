@@ -17,24 +17,78 @@
 			"download" : "Modulo-Mesa-de-Partes.pdf",
 			"label": "Modulo de Mesa de Partes",
 			"desc": "Información del uso por parte de Mesa de Partes del sistema"
+		},
+		{
+			"ruta" : "/ayuda/docs/data/files/3_Manual de usuario_U.Biblioteca_Economía.pdf",
+			"download" : "Manual de usuario_U.Biblioteca_Economía.pdf",
+			"label": "Manual de Usuario Unidad de Biblioteca y Economia",
+			"desc": "Información del uso por parte de las Unidades de Biblioteca y Economia"
+		},
+		{
+			"ruta" : "/ayuda/docs/data/files/4_Manual_de_usuario_Direccion_de_Escuela.pdf",
+			"download" : "Manual_de_usuario_Direccion_de_Escuela.pdf",
+			"label": "Manual de Usuario de Dirección de Escuela Profesional",
+			"desc": "Información del uso para la Dirección de Escuela"
 		}
 	],
 	"tutoriales" : [
-
 		{
-			"ruta": "http://sgd.unmsm.edu.pe/software/Tramite_de_bachiller_parte1.mp4",
+			"id": 1,
+			"ruta": "/videos/Tramite_de_bachiller_parte1.mp4",
 			"label": "Tramite de Bachiller - Parte 1",
 			"type":"video/mp4"
 		},
 		{
-			"ruta": "http://sgd.unmsm.edu.pe/software/TRAMITE%20DE%20BACHILLER%20PARTE%202.mp4",
+			"id": 2,
+			"ruta": "/videos/Tramite_de_bachiller_parte2.mp4",
 			"label": "Tramite de Bachiller - Parte 2",
 			"type":"video/mp4"
 		},
 		{
-			"ruta": "http://sgd.unmsm.edu.pe/software/MESA%20DE%20PARTES.mp4",
+			"id": 3,
+			"ruta": "/videos/Mesa_de_partes.mp4",
 			"label": "Tutorial de Mesa de Partes",
 			"type":"video/mp4"
+		},
+		{
+			"id": 4,
+			"ruta": "/videos/VICEDECANATO_(SECRETARIA).mp4",
+			"label": "Tutorial de Vicedecanato - Secretaria",
+			"type":"video/mp4"
+		},
+		{
+			"id": 5,
+			"ruta": "/videos/VICEDECANATO_(VICEDECANO-A).mp4",
+			"label": "Tutorial de Vicedecanato - Vicedecano",
+			"type":"video/mp4"
+		}
+
+	],
+	"software" : [
+		{
+			"ruta": "/software/InstallerTramiteDoc.msi",
+			"label": "WebSocket",
+			"img": "/software/logos/onpe_logo.png",
+			"download" : "InstallerTramiteDoc.msi"
+		},
+		{
+			"ruta": "/software/InstallerFirmaONPE.msi",
+			"label": "Software de Firma ONPE",
+			"img": "/software/logos/firma_onpe_logo.png",
+			"download" : "InstallerFirmaONPE.msi"
+		},
+		{
+			"ruta": "/software/InstallerComplementoWord.msi",
+			"label": "Complemento Word",
+			"img": "/software/logos/complemento_word_logo.png",
+			"download" : "InstallerComplementoWord.msi"
+		},
+		{
+			"ruta": "/software/Bit4id_Middleware.exe",
+			"label": "Bit4id",
+			"img": "/software/logos/bit4id_logo.png",
+			"download" : "Bit4id_Middleware.exe"
 		}
 	]
+
 }

@@ -38,7 +38,7 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
-              <h1>Videos Promocionales</h1>
+              <h1>Software</h1>
               <span class="subheading">Aquí podrás encontrar todas las novedades Sistema de Gestión Documental</span>
             </div>
           </div>
@@ -68,40 +68,37 @@
     <script src="/ayuda/js/centro_ayuda.js"></script>
     <script type="text/javascript">
       $(function () {
-        chargeFragments();
-        $("videos_promo_link").attr("class", "active");
-        // Recupera el JSON con los datos de los tutoriales
+        var settings = function () {$("#software_link").addClass("active");};
+        chargeFragments(settings);
+        // Recupera el JSON con los datos de los software
         $.getJSON("/ayuda/docs/data/layout.json", function (data) {
-          // Variable que almacenara los tutoriales
-          var tutoriales = []
-          // Buscando los tutoriales en el JSON
+          // Variable que almacenara los software
+          var software = []
+          // Buscando los software en el JSON
           $.each(data, function (key, val) {
-            if(key =="tutoriales") {
-              tutoriales = val;
+            if(key =="software") {
+              software = val;
             }
           });
           // Se copiara al DOM
           var dom = ""
-          // Iteracion del arreglo de tutoriales
-          tutoriales.forEach(function (tutorial) {
+          // Iteracion del arreglo de software
+          software.forEach(function (programa) {
           	dom +=
-            `<div class='post-preview box-separate'>
+             `<div class='post-preview box-separate'>
               <a>
-                <h2 class='post-title'>${tutorial.label}</h2>
+                <h5 class='post-title'> ${programa.label} </h5>
               </a>
-              <div class='embed-responsive embed-responsive-16by9'>
-                <video class='embed-responsive-item' controls><source src='${tutorial.ruta}' type='${tutorial.type}'></source></video>
-              </div>
-            </div>
-            <hr>`;
+              <a class='btn btn-primary btn-fix float-right' href='${programa.ruta}' download='${programa.download}'>
+                <i class='fa fa-save' aria-hidden='true'></i> Descargar
+              </a>
+            </div>`;
+            dom += (software.indexOf(programa) != software.length - 1) ? "<hr>" :"";
           });
           // Se coloca en el DOM
-          //
-          //$("#listado").html(dom);
+                 $("#listado").html(dom);
         });
       });
-
     </script>
   </body>
-
 </html>

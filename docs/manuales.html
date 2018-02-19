@@ -65,8 +65,8 @@
     <script src="/ayuda/js/centro_ayuda.js"></script>
     <script type="text/javascript">
       $(function () {
-        chargeFragments();
-        $("#manuales_link").attr("class", "active");
+        var settings = function () {$("#manuales_link").addClass("active");};
+        chargeFragments(settings);
         // Recupera el JSON con los datos de los manuales
         $.getJSON("/ayuda/docs/data/layout.json", function (data) {
           // Variable que almacenara los manuales
@@ -93,7 +93,9 @@
               <a class='btn btn-warning float-right' href='${manual.ruta}' target='_blank'>
                 <i class='fa fa-search-plus' aria-hidden='true'></i> Ver manual
               </a>
-            </div><hr>`;
+            </div>`;
+
+            dom += (manuales.indexOf(manual) != manuales.length - 1) ? "<hr>" :"";
           });
           // Se coloca en el DOM
           //

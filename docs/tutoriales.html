@@ -23,7 +23,11 @@
 
     <!-- Custom styles for this template -->
     <link href="/ayuda/css/clean-blog.min.css" rel="stylesheet">
+    <style>
+      .s-video-button{
 
+      }
+    </style>
   </head>
 
   <body>
@@ -52,8 +56,28 @@
         <div class="col-lg-8 col-md-10 mx-auto" id="listado">
         </div>
       </div>
+      <!-- Modal Video Seleccionado -->
+      <div class="modal fade" id="s-video-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle"><span id="s-video-title"></span></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div id='s-video-container' class='embed-responsive embed-responsive-16by9'>
+                <video id='s-video' class='embed-responsive-item' controls></video>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
     <hr>
 
     <!-- Footer -->
@@ -67,13 +91,30 @@
     <script src="/ayuda/js/centro_ayuda.js"></script>
 
     <script type="text/javascript">
+      // Funcion de inicio de la configuracion de la pagina
       $(function () {
-        chargeFragments();
-        $("#tutoriales_link").attr("class", "active");
-        // Recupera el JSON con los datos de los <tut>          </tut>oriales
+        var settings = function () {$("#tutoriales_link").addClass("active");};
+        chargeFragments(settings);
+        obtenerTutoriales();
+      });
+
+      // Funcion para pausar un video en el modal
+      function pausarVideoAlCerrar() {
+        $("#s-video-modal").on("hidden.bs.modal", function (e) {
+          $("#s-video").attr({"src" : "" , "type" : ""});
+        });
+      }
+
+      // Funcion para colacar el video en el modal, realiza una consulta a layout.json
+      function colocarVideo(tutorial) {
+        $("#s-video-title").html(tutorial.label);
+        $("#s-video").attr({"src" : tutorial.ruta , "type" : tutorial.type});
+      }
+
+      // Funcion que busca la lista de tutoriales en layout.json
+      function obtenerTutoriales(){
+        var tutoriales = [];
         $.getJSON("/ayuda/docs/data/layout.json", function (data) {
-          // Variable que almacenara los tutoriales
-          var tutoriales = []
           // Buscando los tutoriales en el JSON
           $.each(data, function (key, val) {
             if(key =="tutoriales") {
@@ -84,24 +125,28 @@
           var dom = ""
           // Iteracion del arreglo de tutoriales
           tutoriales.forEach(function (tutorial) {
-          	dom +=
+            dom +=
             `<div class='post-preview box-separate'>
               <a>
                 <h2 class='post-title'>${tutorial.label}</h2>
               </a>
-              <div class='embed-responsive embed-responsive-16by9'>
-                <video class='embed-responsive-item' controls><source src='${tutorial.ruta}' type='${tutorial.type}'></source></video>
-              </div>
-            </div>
-            <hr>`;
+              <button type='button' class='btn btn-primary s-video-button' value='${tutorial.id}'>
+                Ver video
+              </button>
+            </div>`
+
+            dom += (tutoriales.indexOf(tutorial) != tutoriales.length - 1) ? "<hr>" : "";
           });
           // Se coloca en el DOM
-          //
           $("#listado").html(dom);
-        });
-      });
 
+          $(".s-video-button").click(function(e){
+            colocarVideo(tutoriales[$(this).val()-1]);
+            $("#s-video-modal").modal("show");
+            pausarVideoAlCerrar();
+          });
+        });
+      }
     </script>
   </body>
-
 </html>

@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -23,7 +21,6 @@
 
     <!-- Custom styles for this template -->
     <link href="/ayuda/css/clean-blog.min.css" rel="stylesheet">
-
   </head>
 
   <body>
@@ -81,11 +78,10 @@
           <div class="post-preview">
             <a href="docs/videos_promo.html">
               <h3 class="post-title">
-                Videos informativos
+                Software
               </h3>
               <h4 class="post-subtitle">
-               Aqui encontrará los videos del inicio del proyecto, asi como
-               también les informará de las novedades que traerá el sistema.
+               Aqui encontrará los instaladores del Sistema de Gestión Docuemental.
               </h4>
             </a>
           </div>
@@ -103,8 +99,8 @@
     <script src="/ayuda/js/centro_ayuda.js"></script>
     <script>
       $(function(){
-        chargeFragments();
-        $("#inicio_link").addClass("active");
+        var settings = function () {$("#inicio_link").addClass("active");};
+        chargeFragments(settings);
       });
     </script>
   </body>
